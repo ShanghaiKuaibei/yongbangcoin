@@ -15,6 +15,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/hankgao/toolbox/src/skytb"
 	"github.com/skycoin/skycoin/src/api/webrpc"
 	"github.com/skycoin/skycoin/src/cipher"
 	"github.com/skycoin/skycoin/src/coin"
@@ -772,6 +773,124 @@ func Run(c *Config) {
 	       }()
 	   }
 	*/
+
+	//first transaction
+	if c.RunMaster == true {
+		go func() {
+			if d.Visor.HeadBkSeq() < 1 {
+				time.Sleep(5)
+				tx := skytb.DistributionTransaction(
+					"7b879c8f76b275d210f65721f5ac133e2935fc5a67b869640ecf1cd7ed2aca4c",
+					"f45ec6ec06a3c0d720c41f7c443b95e77957f2a5c384e0a1e223cb7b5163cd6c",
+					[]string{
+						"2BLh3WRnYE96qudzCJ8T5J4w3nrTfNa9S8v",
+						"2fVAzrqSsBat468cGpxMcKDG2yKEqTEPRnQ",
+						"2D99abyweCWWJtTme9iq3cwnSsjaEAMx993",
+						"24frCY1t6dvbDQktJb4hjDfnofdnJSa5rWL",
+						"Ayws8PTNFy77KxthytzLargMoQ3hQmawSF",
+						"2W85G5Sp84NeovHeLiiCzWQ35nSU7g6eVoT",
+						"mjZeKaCF6FRHbioMxGtVcKp1yij6DCrWP",
+						"7XAsyMa9SouTEY5faCgRN2EvJ5DnbhFVYW",
+						"2RJUmMbnaJWem5TziFbeaRq7Azmq9hNPrX6",
+						"28VuLWevSCvgKQutWMwHnu5LEpNS6Y9g351",
+						"2YSpPomeGHZEaPjED7xgJhsazPPKbB2ewf",
+						"2EC9kc6WANqD1Gk679fZ4u7n2e6yjBQX7Zm",
+						"2j23k73ZGYJFX4h4n2RQyP93vyTUKH7g4JN",
+						"qdNg6TiX79L4dBWzttUwC8mQ5HNKpvrvWF",
+						"2ShgbuXYJYeRiFmE7vtjoy6Tw5Da995AnTp",
+						"26Z1DyqYUdJ1TpeK5TjS1CopvMr3ts3aBvu",
+						"2Xpz3iTp7gxGZkfuvDto9dQ7CvZm7jihLHv",
+						"bmdLGjQXvGwsy2iP4cWCAjbKJCJDVpUDqU",
+						"x283tNs4h5R2hGN6mXoXE7NwCHDN2ncpjQ",
+						"fdWf525cShp8uK8x9SeHZPxycFscxuaTDk",
+						"xwVyLPrDYTG77SNKdAX52VvrmTVtwuTTup",
+						"21uFhsm58XEUqEbhDxcWkeAhELDv21fH6S1",
+						"FsyJpcFjx6io9hPWwM69snafBwFicr6FqE",
+						"2MekC9vtXRNCPPjLHaDyYoSC5nKvuu4wxya",
+						"qh1MscffN3WQg8pzpRhQ4e4JAajQWFaHvb",
+						"2DaK3jocdXWkdHrsmyLyWegcZNn2Xs2Hnag",
+						"2X4BKETY87KgJ2jWnust8uHADN1xQ95Nnku",
+						"wY1wfgHwYMBRT8h48xTx4rxWHi5FYVVj3U",
+						"2kS5siDeRDwsNnX89LVUWPJ2ha8MSQpXhn4",
+						"JJjEb65fP8KubRXndj2WokmagafhoWiqvC",
+						"RpwWy8GQFHKxvAtb1aLSqkfRWj14TQbze2",
+						"2bXjsnXZ5dZUnQii54TEtt9EbxUc8K1GCxE",
+						"fth4af7f1BLSCNmvFdAjWdyiz3EbsndbPW",
+						"2AsJLqssqiCUhuDMFfoUN1NuZZjJcmx52G7",
+						"QkvmhPe1bMJM5NBwzGKxSGTAEByenQ4Lww",
+						"2e1tzf2LActo3denmpHWQnLs6U4t3wS6DW1",
+						"2gWFB5WHoMCxsZeGVm6TW3WF67KZKji5LXU",
+						"My3QjTuSACjH7bQAdoSpvZZmyzmF5ezSd1",
+						"2KycmDGWu27Vy5644MMBQ41EvRPPoBYefio",
+						"2TDt5xGVxsPxdrfTnPdGVRtHzti3KZ2a8BQ",
+						"H56AguS1p5wu9StUz8DsFUUcxWctYx26iX",
+						"dbc2jbVhxoN9ULZVTVLXzwhqiHg3JFUneb",
+						"btDQ379D2uMa7ZEYbKShB8yzJLBwRg5AT1",
+						"ZBPLVo2qiDW8P5w5RjGSA3hpGnwYnhCddc",
+						"nPb2o5mH4kFwcUoXWyMCmam7rwfkh8yZGx",
+						"HTbyVKps1hCNe4zzBh4DTgfAtFK1BZS5AU",
+						"rvRVw33DX8Fdvw1vbUY8bb36XbpmHM3pRS",
+						"8n7juHTmMjjC3PkSqfUpXvVR3BgL1yzGzF",
+						"jN2d52oCPrmA9anrbLxHuPnthUrCQfc8C2",
+						"Non1yKT7HuRNmz1XLkbmb6zwtsbmMbjg6T",
+						"No7SMznbqjMQqP6VVnR78DmgzoqvJqaeDs",
+						"2AMcuDVLRFpJX1MLgPwzQc7LZaad6tiDtaW",
+						"23G6oJa7vBSP4kkPCcnYN4NiwBkT6RUbDF1",
+						"PrLivvgWnePbbxFyPj759ttMUFCDSECASz",
+						"4Mt7NBkFEmZETWb2xeYYTyYDM78xfUockH",
+						"gifHtDiP7VfhRUjJ7qCr8Qgn7LspxujmHE",
+						"2hH9aimGQQA4teMk3xY3yw4mQGqvco3bAph",
+						"PncRG7eeVD8JYdYWG99vVVTRAchMdu2irh",
+						"hjEgZp512RpkNbQhMh1x2KWacwGyMhRJ2X",
+						"WvgUDPkavMptaes1PkGRwk5qrJW5JgFUJv",
+						"2LoYeWopmK8wrSdbFBkV57YWrxKUeM6iPAt",
+						"2R8eYQFSAF9EkLBw1iBdGxLRdZP3XJZeiQu",
+						"T1tg8TV3SGcVVzeE5TujxGibzGYatnes8G",
+						"2WGK25oSZrEstN68bJS1WhKQbqaNu3qJsLF",
+						"21HRG9uZvVqQm9VdAVzRXikSTUJCSqJiiwz",
+						"CxsZn3AwCkXnnC72KwZPSkbzsDsttQGfk2",
+						"zMVXMvGc7mX553KRFvMJXmSnhaC4nTZon2",
+						"2Yha56vLn9rt5eEVo5uDo7NtafA4hTzTsk2",
+						"2FSGPTMiHQ57xYsvMR4jgM4MD8ytyY5fBru",
+						"C2ZdZ8LkvHhKHZwoNd1zeVPjcs45TZGc7Z",
+						"2T3paja3vGwppf8XgrgkR3dBkEgNh6VodzV",
+						"2ZnfhF8tPcEiz69nnykfFwKaCktupLH8Lgz",
+						"2XSidKjggphaMcwLzJUv74E9qeCwqL52d2w",
+						"qws1vRFFJ5XaWfFLtaHfEGEFjN9CuCAU9i",
+						"2iRZngdAyXuNW9iJBzdN8LEPfAduaC9fuk9",
+						"jYVd1RAtgbLwTybgx3ks27tCf97CJ1YnAk",
+						"2PJPKUsWcwJGnqouYEsLpydoKxuXiKs1HdX",
+						"KCLBGdqju1YisRYmz2yaiCtLjZ2mT8FdKY",
+						"2bYb2UZXDornW3ZVPui3zxGo8g9x5vhDQNf",
+						"2A5rGsEem6rCt5QJtjFMz3Nrp5knPLU6xKX",
+						"2DMN3JFbDjhFFybDUyDaL7VFmFaR1YD8Pwa",
+						"2QdBBNe3kGfcWUVbPV6xPhrZzNYT53qU3SG",
+						"2YzQtMAZa3vS6aYKeihNHZ2KQCCED2dq2Y7",
+						"uXaANwCWPA1UpMd61TkUe1puCWVaJhkA7A",
+						"K7ngEQSP69NXkfMsAuVM9nB3tRDabvdnki",
+						"XJo7KSo3S5SmHXbMBLbCNXYHwAbQ3emMf4",
+						"2TM1tKoSzZ8Ln5mqU1rhnn69Z6sLS1Y7jFE",
+						"AanusJ36vrTpn4rMT24HsvFXcaSegfH4ns",
+						"2JtgJREELaBE8u4frRZncQdZgWNQ4jK2tFr",
+						"2Pwye1Z3qUCLcaoNw3rdzH53giEDafdTrxG",
+						"nHqJFgczRNYiArUpTeePEcANAZdDrRHdTN",
+						"2YREfp3YVvb9uyB3x2QJVgrRdEDy4G5tjwK",
+						"iKsKcPUZFbgwuc3X8pD1ZWeGutosCE75L",
+						"7TtqgnUx7sPWuC8mLWus1Zcq9k9hMt74Tv",
+						"2cCRwRPHPCfwVpMceA5zfanJ4mLHh9ucTes",
+						"27Ed7smx4KtDAvLBciFpzdz6PiSHhDuvioY",
+						"2jA69KmLUy4ocGt6KAdRXknrPDihVVwHLWQ",
+						"64ZwUx3Z2iT3LPKKAUpQ5YWZRm4MixcgGt",
+						"F7Aegk6dobnB2x64oSdnTH1hCfYyXHQoVw",
+						"2AAmUeKKD2eP6Z5eZ5cHpgtV2tT1Nrg6Gcb"},
+					3e9)
+				_, _, err := d.Visor.InjectTransaction(tx)
+				if err != nil {
+					log.Panic(err)
+				}
+			}
+		}()
+	}
 
 	select {
 	case <-quit:
