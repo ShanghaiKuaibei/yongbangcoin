@@ -46,7 +46,7 @@ var (
 	logger = logging.MustGetLogger("main")
 
 	// GenesisSignatureStr hex string of genesis signature
-	GenesisSignatureStr = ""
+	GenesisSignatureStr = "7b4ca9e569a72a4b7434ec8bf56cfee7624f2fb3c3174611605362d55b3f041a45d20cd146d04c064ba7c4c94292fe037d11924b47393a4a4c41537074b4663100"
 	// GenesisAddressStr genesis address string
 	GenesisAddressStr = "ieJZqy74rXk3h23MeofyK8tLyvapsnhySx"
 	// BlockchainPubkeyStr pubic key string
@@ -61,8 +61,8 @@ var (
 
 	// DefaultConnections the default trust node addresses
 	DefaultConnections = []string{
-		"74.120.168.216:7050",
-		"74.120.174.69:7050",
+		"74.120.168.216:7040",
+		"74.120.174.69:7040",
 	}
 )
 
